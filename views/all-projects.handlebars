@@ -1,0 +1,13 @@
+<div>
+    <h1>All Projects</h3>
+    {{#each projects as |project|}}
+    <div class="project">
+        <h2>{{project.title}}</h2>
+        <h3>{{format_date project.createdAt}}</h3>
+        <h4>{{project.body}}</h4>
+        <br>
+    </div>
+    {{else}}
+    <h6 class="pb-4 has-text-centered is-italic">there are currently no projects</h6> 
+    {{/each}}
+</div>

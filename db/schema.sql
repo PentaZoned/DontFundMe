@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS fundme_db;
+
+CREATE DATABASE fundme_db;
