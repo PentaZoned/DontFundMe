@@ -31,7 +31,7 @@ Donation.init(
           },
 
         amount: {
-            type: DataTypes.TEXT,
+            type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
                 isDecimal: true,
