@@ -28,3 +28,16 @@ header, .project:not(:last-child) {
   flex-direction: row-reverse;
   align-content: flex-end;
 }
+
+
+.title{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+line-height:51px;
+vertical-align:middle;
+}
+
+h1{
+  text-align: center;
+}
