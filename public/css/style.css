@@ -29,7 +29,6 @@ header, .project:not(:last-child) {
   align-content: flex-end;
 }
 
-
 .title, .btn{
 width: 100%;
 margin-left: auto;
@@ -42,9 +41,12 @@ h1, h2{
   text-align: center;
 }
 
-
 .row{
   display: flex;
   justify-content: center; /*centers items on the line (the x-axis by default)*/
   align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+.link{
+  margin-left: 10px;
 }
