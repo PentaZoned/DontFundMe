@@ -27,10 +27,10 @@ Project.init(
             }
         },
         fund_needed: {
-            type: DataTypes.TEXT,
+            type: DataTypes.DECIMAL,
             allowNull: false,
             validate: {
-                len: [1]
+                isDecimal: true,
             }
         },
     },
