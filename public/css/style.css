@@ -30,7 +30,7 @@ header, .project:not(:last-child) {
 }
 
 
-.title{
+.title, .btn{
 width: 100%;
 margin-left: auto;
 margin-right: auto;
@@ -38,6 +38,13 @@ line-height:51px;
 vertical-align:middle;
 }
 
-h1{
+h1, h2{
   text-align: center;
+}
+
+
+.row{
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
 }
