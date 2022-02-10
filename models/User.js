@@ -54,7 +54,7 @@ User.init(
               },
         },
         sequelize,
-        // do not automatically create createdAt/updatedAt timestamp fields
+        // do not automatically create created_at/updated_at timestamp fields
         timestamps: false,
         // do not pluralize name of database table
         freezeTableName: true,
