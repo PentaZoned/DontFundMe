@@ -49,4 +49,4 @@ Project.init(
     }
 );
 
-module.exports = Comment;
+module.exports = Project;
