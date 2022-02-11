@@ -57,13 +57,11 @@ router.post('/', (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      github: req.body.github
     })
     .then(dbUserData => {
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.name = dbUserData.name;
-        req.session.github = dbUserData.github;
         req.session.loggedIn = true;
         res.json(dbUserData);
       });
@@ -93,7 +91,6 @@ router.post('/', (req, res) => {
         // declare session variables
         req.session.user_id = dbUserData.id;
         req.session.name = dbUserData.name;
-        req.session.github = dbUserData.github;
         req.session.loggedIn = true;
   
         res.json({ user: dbUserData, message: 'You are now logged in!' });
