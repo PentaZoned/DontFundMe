@@ -4,8 +4,13 @@ const seedProject = require('./project-seeds');
 const seedUser = require('./user-seeds');
 
 const seedAll = async () => {
-    await sequelize.sync({ force: true });
-
+    try {
+        await sequelize.sync({ force: true });
+    } catch (err) {
+        console.log("Meow");
+        console.log(err);
+    }
+    
     await seedUser();
 
     await seedProject();
