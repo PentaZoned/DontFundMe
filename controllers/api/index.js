@@ -1,16 +1,14 @@
-// Dependencies
 const router = require('express').Router();
-// API routes folder
-const apiRoutes = require('./api');
-const homeRoutes = require('./home-routes.js');
-const dashboardRoutes = require('./dashboard-routes.js');
+// User Routes
+const userRoutes = require('./user-routes');
+// Post Routes
+const projectRoutes = require('./project-routes');
+// Comment Routes
+const donationRoutes = require('./donation-routes');
 
-router.use('/api', apiRoutes);
-router.use('/', homeRoutes);
-router.use('/dashboard', dashboardRoutes);
-
-router.use((req, res) => {
-  res.status(404).end();
-});
+// Define route path for the API to use, e.g. api/users/
+router.use('/users', userRoutes);
+router.use('/projects', projectRoutes);
+router.use('/donations', donationRoutes);
 
 module.exports = router;
