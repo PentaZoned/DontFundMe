@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
       });
   });
 
-//get a single user
+//get a single project
   router.get('/:id', (req, res) => {
     Project.findOne({
       where: {
@@ -69,7 +69,7 @@ router.get('/', (req, res) => {
     })
       .then(dbProjectData => {
         if (!dbProjectData) {
-          res.status(404).json({ message: 'No post found with this id' });
+          res.status(404).json({ message: 'No project found with this id' });
           return;
         }
         res.json(dbProjectData);
@@ -96,7 +96,7 @@ router.post('/', withAuth, (req, res) => {
       });
 });
 
-//PUT updates a post
+//PUT updates a project
 router.put('/:id', withAuth, (req, res) => {
     Project.update({
         title: req.body.title,
@@ -110,7 +110,7 @@ router.put('/:id', withAuth, (req, res) => {
       })
       .then(dbProjectData => {
         if (!dbProjectData) {
-          res.status(404).json({ message: 'No post found with this id' });
+          res.status(404).json({ message: 'No project found with this id' });
           return;
         }
         res.json(dbProjectData);
@@ -121,7 +121,7 @@ router.put('/:id', withAuth, (req, res) => {
       });
   });
 
-  //Delete a post by id
+  //Delete a project by id
   router.delete('/:id', withAuth, (req, res) => {
     Project.destroy({
       where: {
@@ -130,7 +130,7 @@ router.put('/:id', withAuth, (req, res) => {
     })
       .then(dbProjectData => {
         if (!dbProjectData) {
-          res.status(404).json({ message: 'No post found with this id' });
+          res.status(404).json({ message: 'No project found with this id' });
           return;
         }
         res.json(dbProjectData);
