@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
-const seedDonation = require('./donation-seed');
-const seedProject = require('./project-seeds');
-const seedUser = require('./user-seeds');
+const seedDonations = require('./donation-seeds');
+const seedProjects = require('./project-seeds');
+const seedUsers = require('./user-seeds');
 
 const seedAll = async () => {
     try {
@@ -10,12 +10,17 @@ const seedAll = async () => {
         console.log("Meow");
         console.log(err);
     }
+    console.log('\n----- DATABASE SYNCED -----\n');
     
-    await seedUser();
+    await seedUsers();
+    console.log('\n----- USERS SEEDED -----\n');
 
-    await seedProject();
+    await seedProjects();
+    console.log('\n----- PROJECTS SEEDED -----\n');
 
-    await seedDonation();
+    await seedDonations();
+    console.log('\n----- DONATIONS SEEDED -----\n');
+
     process.exit(0);
 };
 

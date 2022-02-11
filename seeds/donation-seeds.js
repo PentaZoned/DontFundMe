@@ -18,6 +18,6 @@ const donationData = [
     },
 ];
 
-const seedDonation = () => Donation.bulkCreate(donationData);
+const seedDonations = () => Donation.bulkCreate(donationData);
 
-module.exports = seedDonation;
+module.exports = seedDonations;
