@@ -20,3 +20,7 @@ const projectData = [
         fund_needed: 60,
     },
 ];
+
+const seedProject = () => Project.bulkCreate(projectData);
+
+module.exports = seedProject;
