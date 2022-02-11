@@ -10,3 +10,15 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+const hbs = exphbs.create({ helpers });
+
+const sess = {
+    secret: 'fguiwehnKJDE9?2[.vwe?CJ20pcw].ew/ew2?1E4FCJ323cvh674?',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+};
