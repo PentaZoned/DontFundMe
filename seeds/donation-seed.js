@@ -17,3 +17,7 @@ const donationData = [
         amount: 30,
     },
 ];
+
+const seedDonation = () => Donation.bulkCreate(donationData);
+
+module.exports = seedDonation;
