@@ -19,8 +19,9 @@ Project.init(
               key: 'id'
             }
           },
-        name: {
-            type: DataTypes.TEXT,
+
+        title: {
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]

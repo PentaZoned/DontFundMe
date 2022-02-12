@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
   });
 
   // LOGIN checks the email address
-  router.post('/login', (req, res) => {
+  router.post('/signin', (req, res) => {
     User.findOne({
       where: {
         email: req.body.email
