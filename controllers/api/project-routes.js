@@ -81,7 +81,7 @@ router.get('/', (req, res) => {
   });
 
 //POST creates new project
-router.post('/', withAuth, (req, res) => {
+router.post('/create/', withAuth, (req, res) => {
     Project.create({
       title: req.body.title,
       description: req.body.description,

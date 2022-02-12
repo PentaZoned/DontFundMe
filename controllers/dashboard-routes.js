@@ -44,6 +44,46 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+  // router.get('/create/', withAuth, (req, res) => {
+  //   Project.findAll({
+  //     where: {
+  //       // use the ID from the session
+  //       user_id: req.session.user_id
+  //     },
+  //     attributes: [
+  //       'id',
+  //       'title',
+  //       'description',
+  //       'user_id',
+  //       'fund_needed',
+  //       'created_at'
+  //     ],
+  //     include: [
+  //       {
+  //         model: Donation,
+  //         attributes: ['id', 'amount', 'created_at'],
+  //         include: {
+  //           model: User,
+  //           attributes: ['name']
+  //         }
+  //       },
+  //       {
+  //         model: User,
+  //         attributes: ['name']
+  //       }
+  //     ]
+  //   })
+  //     .then(dbProjectData => {
+  //       // serialize data before passing to template
+  //       const projects = dbProjectData.map(project => project.get({ plain: true }));
+  //       res.render('new-project', { projects, loggedIn: true });
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //       res.status(500).json(err);
+  //     });
+  // });
+
 // A route to edit a projet
 router.get('/edit/:id', withAuth, (req, res) => {
   Project.findOne({
