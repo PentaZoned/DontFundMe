@@ -2,46 +2,13 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Project, User, Donation } = require('../models');
 
-// router.get('/', (req, res) => {
-//     console.log(req.session);
+router.get('/', async (req, res) => {
 
-//     Project.findAll({
-//       attributes: [
-//         'id',
-//         'title',
-//         'description',
-//         'user_id',
-//         'fund_needed',
-//         'created_at'
-//       ],
-//       include: [
-//         {
-//           model: Donation,
-//           attributes: ['id', 'amount', 'created_at'],
-//           include: {
-//             model: User,
-//             attributes: ['name']
-//           }
-//         },
-//         {
-//           model: User,
-//           attributes: ['name']
-//         }
-//       ]
-//     })
-//       .then(dbProjectData => {
-//         const projects = dbProjectData.map(project => project.get({ plain: true }));
-//         res.render('home', {
-//             projects,
-//             loggedIn: req.session.loggedIn
-//           });
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   });
-
+    // Pass serialized data and session flag into template
+    res.render('landingpage', { 
+      logged_in: req.session.logged_in 
+    });
+});
 
 //route to signin page
 router.get('/signin', (req, res) => {
