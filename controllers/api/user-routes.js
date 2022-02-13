@@ -51,22 +51,38 @@ router.get('/:id', (req, res) => {
       });
   });
 
-// POST create a user
-router.post('/', (req, res) => {
-    User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    })
-    .then(dbUserData => {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.name = dbUserData.name;
-        req.session.loggedIn = true;
-        res.json(dbUserData);
-      });
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(userData)
     });
-  });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+// POST create a user
+// router.post('/', (req, res) => {
+//     User.create({
+//       name: req.body.name,
+//       email: req.body.email,
+//       password: req.body.password,
+//     })
+//     .then(dbUserData => {
+//       req.session.save(() => {
+//         req.session.user_id = dbUserData.id;
+//         req.session.name = dbUserData.name;
+//         req.session.loggedIn = true;
+//         res.json(dbUserData);
+//       });
+//     });
+//   });
 
   // LOGIN checks the email address
   router.post('/signin', (req, res) => {
