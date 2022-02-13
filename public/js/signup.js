@@ -1,4 +1,4 @@
-const signUp = () => async (event) => {
+async function signupFormHandler(event) {
     event.preventDefault();
 
     const name = document.querySelector('#name-signup').value.trim();
@@ -13,11 +13,11 @@ const signUp = () => async (event) => {
         });
     
         if (response.ok) {
-          document.location.replace('/signin');
+          document.location.replace('/dashboard');
         } else {
           alert(response.statusText);
         }
       }
 };
 
-document.querySelector('#signUpButton').addEventListener('submit', signUp);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

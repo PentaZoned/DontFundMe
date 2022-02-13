@@ -1,11 +1,11 @@
-const signIn = async (event) => {
+async function signinFormHandler(event) {
     event.preventDefault();
 
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+    const email = document.querySelector('#email-signin').value.trim();
+    const password = document.querySelector('#password-signin').value.trim();
 
     if (email && password) {
-        const response = await fetch('/api/signin', {
+        const response = await fetch('/api/users/signin', {
           method: 'POST',
           body: JSON.stringify({ email, password }),
           headers: { 'Content-Type': 'application/json' },
@@ -19,4 +19,4 @@ const signIn = async (event) => {
       }
 };
 
-document.querySelector('#signInButton').addEventListener('submit', signIn);
+document.querySelector('.signin-form').addEventListener('submit', signinFormHandler);
