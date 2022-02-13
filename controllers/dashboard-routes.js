@@ -36,7 +36,7 @@ router.get('/', withAuth, (req, res) => {
       .then(dbProjectData => {
         // serialize data before passing to template
         const projects = dbProjectData.map(project => project.get({ plain: true }));
-        res.render('dashboard', { projects, loggedIn: true });
+        res.render('dashboard', { projects, logged_in: true });
       })
       .catch(err => {
         console.log(err);

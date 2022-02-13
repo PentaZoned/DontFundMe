@@ -107,7 +107,7 @@ router.post('/', async (req, res) => {
         // declare session variables
         req.session.user_id = dbUserData.id;
         req.session.name = dbUserData.name;
-        req.session.loggedIn = true;
+        req.session.logged_in = true;
   
         res.json({ user: dbUserData, message: 'You are now logged in!' });
       });
