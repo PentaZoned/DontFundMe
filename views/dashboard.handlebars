@@ -1,20 +1,9 @@
 <div class="row">
   <div class="col-auto">
-    <h2>{{user.name}}'s Dashboard</h2>
+    <h2>Dashboard</h2>
   </div>
 </div>
-
 <div class="row mt-4">
-  <div class="col-md-6">
-      <div class="row md-6">
-        <h3>You do not have any projects yet. Start a DontFundMe!</h3>
-
-        <div class="col-4">
-          <button type="submit" class="btn btn-primary create">DontFundMe</button>
-        </div>
-      </div>  
-  </div>
-
   {{#if projects.length}}
   <div class="col-md-6 project-list">
     <h3>Your DontFundMe Projects:</h3>
@@ -22,13 +11,28 @@
     {{#each projects as |project|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.title}}</a></h4>
+      <h2>
+        <a href="/project/{{project.id}}">{{project.name}}</a>
+      </h2>
+      <p>
+        <span>Raised $0 / ${{project.fund_needed}}</span>
+      </p>
+      <p>Created on {{format_date project.created_at}}</p>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
+      {{else}}
+      <div class="col-md-6">
+        <div class="row md-6">
+          <h3>You do not have any projects yet. Start a DontFundMe!</h3>
+        <div class="col-4">
+          <button type="submit" class="btn btn-primary create">DontFundMe</button>
+        </div>
+      </div>  
+  </div>
   </div>
   {{/if}}
 </div>
