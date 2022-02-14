@@ -81,3 +81,9 @@ padding: 20px;
 .steps{
   align-content: center;
 }
+
+.signin-form{
+  border: 2px solid #9C876F;
+  border-radius: 25px;
+  padding: 20px;
+}
