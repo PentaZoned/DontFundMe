@@ -115,16 +115,16 @@ router.post('/', async (req, res) => {
   });
 
 // logout a user
-  router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-      req.session.destroy(() => {
-        res.status(204).end();
-      });
-    }
-    else {
-      res.status(404).end();
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+       res.status(204).end();
+     });
+   } else {
+     res.status(404).end();
     }
   });
+  
 
 // PUT updates the user
 router.put('/:id', withAuth, (req, res) => {

@@ -3,19 +3,19 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     // Get the project title and project text from the form
-    const title = document.querySelector("#project-title").value.trim();
-    const description = document.querySelector("#project-desc").value.trim();
-    const fund_needed = document.querySelector("#project-funding").value.trim();   
 
+    const title = document.querySelector('#project-title').value.trim();
+    const fund_needed = document.querySelector('#fund_needed').value.trim();   
+    const description = document.querySelector('#project-desc').value.trim();
 
  
-    if (title && description && fund_needed){
+    if (title && fund_needed && description){
       const response = await fetch(`/api/projects`, {
       method: 'POST',
       body: JSON.stringify({
         title,
-        description,
-        fund_needed
+        fund_needed,
+        description
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ async function newFormHandler(event) {
       document.location.replace('/dashboard');
       // otherwise, display the error
     } else {
-      alert(response.statusText);
+      alert('Failed to create project');
     }
   }
 }
