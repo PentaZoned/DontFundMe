@@ -19,15 +19,16 @@
     <div class="row mb-2 projects">
       <div class="col-8">
         <h2>
-          <a href="/project/{{project.id}}">{{project.title}}</a>
+          <a href="/projects/{{project.id}}">{{project.title}}</a>
         </h2>
       <div class="col-8">
         <p>{{project.description}}</p>
-        <p><span>Raised $0 / ${{project.fund_needed}}</span></p>
+        <p><span>Raised {{donationTotal}} / ${{project.fund_needed}}</span></p>
         <p>Created on {{format_date project.created_at}}</p>        
       </div>
     </div>
       <div class="col-md-4">
+        <button class="btn btn-sm btn-primary" data-id="{{project.id}}">EDIT</button>
         <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
       </div>
     </div>

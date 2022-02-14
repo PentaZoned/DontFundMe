@@ -5,7 +5,7 @@ header, .project:not(:last-child) {
 .no-button {
   background: none;
   border: none;
-  padding: 0;
+  padding: 10PX;
   cursor: pointer;
   color: #1b89bc;
   text-decoration: none;

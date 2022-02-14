@@ -1,5 +1,4 @@
 // New Post Form Handler
-console.log("meow");
 async function newFormHandler(event) {
     event.preventDefault();
 
@@ -11,6 +10,7 @@ async function newFormHandler(event) {
 
  
     if (title && fund_needed && description){
+
       const response = await fetch(`/api/projects`, {
       method: 'POST',
       body: JSON.stringify({
