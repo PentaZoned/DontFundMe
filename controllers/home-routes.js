@@ -30,6 +30,16 @@ router.get('/signin', (req, res) => {
     res.render('signup');
   });
 
+//route to project create page
+router.get('/projects/create', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('createproject');
+});
+
 //   router.get('/project/:id', (req, res) => {
 //     Project.findOne({
 //       where: {
