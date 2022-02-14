@@ -81,12 +81,14 @@ router.get('/', (req, res) => {
   });
 
 //POST creates new project
-router.post('/create/', withAuth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
+  console.log("/api/projects POST");
+  console.log(req.body);
     Project.create({
       title: req.body.title,
       description: req.body.description,
       user_id: req.session.user_id,
-      fund_needed: req.session.fund_needed,
+      fund_needed: req.body.fund_needed,
 
     })
       .then(dbProjectData => res.json(dbProjectData))

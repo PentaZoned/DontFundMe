@@ -1,4 +1,5 @@
 // New Post Form Handler
+console.log("meow");
 async function newFormHandler(event) {
     event.preventDefault();
 
@@ -24,6 +25,7 @@ async function newFormHandler(event) {
 
     // if the response is okay, reload the page, showing the newest project now in the user's project list
     if (response.ok) {
+      console.log(response);
       document.location.replace('/dashboard');
       // otherwise, display the error
     } else {
