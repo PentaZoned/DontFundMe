@@ -14,8 +14,8 @@
     <header class="display-flex justify-space-between align-right p-2">
       <nav>
         {{#if logged_in}}
-        <a href="/dashboard">{{user.name}}</a>
-        <button class="no-button" id="logout">logout</button>
+        <a href="/dashboard">Dashboard</a> |
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
         <a href="/signin">Get Started</a>
         {{/if}}
