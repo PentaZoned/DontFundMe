@@ -3,9 +3,9 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     // Get the project title and project text from the form
-    const title = document.querySelector('input[name="project-title"]').value.trim();
-    const description = document.querySelector('textarea[name="project-desc"]').value.trim();
-    const fund_needed = document.querySelector('input[name="project-funding"]').value.trim();   
+    const title = document.querySelector("#project-title").value.trim();
+    const description = document.querySelector("project-desc").value.trim();
+    const fund_needed = document.querySelector("project-funding").value.trim();   
 
 
  
