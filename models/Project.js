@@ -28,11 +28,7 @@ Project.init(
             }
         },
         description: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+            type: DataTypes.STRING,
         },
         fund_needed: {
             type: DataTypes.DECIMAL,
@@ -41,6 +37,12 @@ Project.init(
                 isDecimal: true,
             }
         },
+        created_at: {
+          type: DataTypes.STRING,
+          validate: {
+            isDate: true,
+          }
+        }
     },
     {
         sequelize,
