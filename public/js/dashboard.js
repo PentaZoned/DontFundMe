@@ -1,7 +1,13 @@
 async function createHandler(event) {
   event.preventDefault();
-      console.log("button works");
-        document.location.replace('/projects/create');
+    document.location.replace('/projects/create');
+};
+
+async function allProjectHandler(event) {
+  event.preventDefault();
+    document.location.replace('/projects/');
 };
 
 document.querySelector('.create').addEventListener('click', createHandler);
+
+document.querySelector('.view-all').addEventListener('click', allProjectHandler);
