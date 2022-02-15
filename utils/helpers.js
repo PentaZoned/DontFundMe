@@ -7,7 +7,13 @@ module.exports = {
     },
 
     progress_bar: (donation_total, goal) => {
-      var percentage = goal / donation_total;
+      var percentage;
+      if (parseInt(donation_total) === 0) {
+        percentage = 0;
+      } else {
+        percentage = goal / donation_total;
+      }
+
       return percentage;
     }
   }
