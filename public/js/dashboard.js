@@ -8,6 +8,6 @@ async function allProjectHandler(event) {
     document.location.replace('/projects/');
 };
 
-document.querySelector('.create').addEventListener('click', createHandler);
+document.querySelector('.create-button').addEventListener('click', createHandler);
 
 document.querySelector('.view-all').addEventListener('click', allProjectHandler);
