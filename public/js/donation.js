@@ -2,9 +2,12 @@
 async function donationFormHandler(event) {
     event.preventDefault();
 
-    // Get the project title and project text from the form
+    // Get the project is and donation from the form
     
     const amount = document.querySelector('#donation-amount').value.trim();
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
 
  
     if (amount > 0){
@@ -12,7 +15,8 @@ async function donationFormHandler(event) {
       const response = await fetch(`/api/donations`, {
       method: 'POST',
       body: JSON.stringify({
-        amount
+        amount,
+        project_id: id
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -24,7 +28,7 @@ async function donationFormHandler(event) {
       console.log(response);
       document.location.replace('/dashboard');
       getAmountArr();
-      donationTotal();
+      donation_total();
       // otherwise, display the error
     } else {
       alert('Failed to make a donation');
@@ -34,14 +38,11 @@ async function donationFormHandler(event) {
 
 //Get an array of donation amounts
 function getAmountArr(){
-    var projectId = window.location.toString().split('/')[
-    window.location.toString().split('/').length - 1];
-    var amountArr = [];
-    var query = `SELECT * FROM donation WHERE project_id=${projectId}`;
-    db.query(query,  (err, res) => {
+    const amountArr = [];
+    db.query(`SELECT * FROM donation WHERE project_id=${id}`,  (err, res) => {
       if (err) throw err
       for (var i = 0; i < res.length; i++) {
-        roleArr.push(res[i].amount);
+        amountArr.push(res[i].amount);
       }
   
     })
@@ -49,12 +50,12 @@ function getAmountArr(){
   }
 
   //Get the donation total
-function donationTotal(){
-let donationTotal = 0;
+function donation_total(){
+let donation_total;
 let amountArr;
       for (var i = 0; i < amountArr.length; i++) {
-          donationTotal += amountArr[i];
-          return donationTotal;
+          donation_total += amountArr[i];
+          return donation_total;
       };
 }
   document.querySelector('.donate-form-group').addEventListener('submit', donationFormHandler);
