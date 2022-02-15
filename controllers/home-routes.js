@@ -107,6 +107,7 @@ router.get('/projects', async (req, res) => {
         'description',
         'user_id',
         'fund_needed',
+        'donation_total',
         'created_at'
       ],
       include: [
