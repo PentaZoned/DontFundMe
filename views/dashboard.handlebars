@@ -28,8 +28,8 @@
       </div>
     </div>
       <div class="column">
-        <button class="button is-primary" data-id="{{project.id}}">EDIT</button>
-        <button class="button is-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="button is-primary" href="/dashboard/edit/{{project.id}}" data-id="{{project.id}}">EDIT</button>
+        <button class="button delete-project-btn is-danger" data-id="{{project.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -47,3 +47,5 @@
 </div>
 
 <script src="./js/dashboard.js"></script>
+<script src="/js/editproject.js"></script>
+<script src="/js/deleteproject.js"></script>
