@@ -34,6 +34,7 @@ async function donationFormHandler(event) {
 
 //Get an array of donation amounts
 function getAmountArr(){
+    var amountArr = [];
     var query = `SELECT * FROM donation`;
     db.query(query,  (err, res) => {
       if (err) throw err
