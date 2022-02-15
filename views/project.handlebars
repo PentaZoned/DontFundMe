@@ -1,17 +1,20 @@
-<div class="text-center">
-  <h2>{{project.title}}</h2>
-  <p>{{project.description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <h3>Goal:</h3>
-    <span>Raised {{donationTotal}} / {{fund_needed}}</span>
-  </p>
-  <p>
-    <div class="donate-form-group">
+<div class="columns">
+  <div class="column">
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    <p>
+      <h3>Goal:</h3>
+      <span>Raised {{donationTotal}} / {{fund_needed}}</span>
+    </p>    
+  <div class="columns is-centered">
+    <div class="column is-half donate-form-group">
         <label for="donation">Make a donation:</label>
-        <input class="form-input" type="number" id="donation-amount" name="donation-amount" placeholder="How much do you want to donate ($)" />
-        <button class="btn btn-primary donate-button">Donate</button>
-      </div>
-    
-  </p>
+        <div class="box">
+          <input class="input form-input" type="number" id="donation-amount" name="donation-amount" placeholder="($)"/>
+          <button class="button is-primary donate-button">Donate</button>
+        </div>
+    </div>    
+  </div>  
+
 </div>
