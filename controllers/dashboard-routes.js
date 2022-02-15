@@ -121,7 +121,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
       // serialize data before passing to template
       const project = dbProjectData.get({ plain: true });
-      res.render('edit-project', { project, loggedIn: true });
+      res.render('editproject', { project, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
