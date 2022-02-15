@@ -40,6 +40,28 @@ router.get('/projects/create', (req, res) => {
   res.render('createproject');
 });
 
+router.get('/projects', async (req, res) => {
+  try {
+    const projectData = await Project.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const projects = projectData.map((project) => project.get({ plain: true }));
+
+    res.render('all-projects', { 
+      projects, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //   router.get('/project/:id', (req, res) => {
 //     Project.findOne({
 //       where: {
