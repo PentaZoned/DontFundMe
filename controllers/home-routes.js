@@ -96,8 +96,8 @@ router.get('/projects', async (req, res) => {
 //         return;
 //       }
 
-  router.get('/project/:id', (req, res) => {
-    Project.findOne({
+  router.get('/projects/:id', (req, res) => {
+    Project.findByPk(req.params.id,{
       where: {
         id: req.params.id
       },
@@ -135,7 +135,7 @@ router.get('/projects', async (req, res) => {
 
         // pass data to template
         res.render('project', {
-            post,
+            ...post,
             loggedIn: req.session.loggedIn
           });
       })
