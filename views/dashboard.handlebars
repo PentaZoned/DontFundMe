@@ -11,7 +11,7 @@
         <div class="column" style="flex-wrap: nowrap">
           <h3>Start a new DontFundMe!</h3>
           <div class="column">
-            <button type="submit" class="btn btn-primary create">DontFundMe</button>
+            <button type="submit" class="button is-primary">Create a DontFundMe!</button>
           </div>
         </div>  
       </div>
@@ -28,17 +28,17 @@
       </div>
     </div>
       <div class="column">
-        <button class="btn btn-sm btn-primary" data-id="{{project.id}}">EDIT</button>
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="button is-primary" data-id="{{project.id}}">EDIT</button>
+        <button class="button is-danger" data-id="{{project.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
       {{else}}
-      <div class="column">
-        <div class="row" style="flex-wrap: nowrap">
+      <div class="columns">
+        <div class="columns" style="flex-wrap: nowrap">
           <h3>You don't have a project yet. Start a DontFundMe!</h3>
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary create">DontFundMe</button>
+          <div class="column">
+            <button type="submit" class="button is-primary">DontFundMe</button>
           </div>
         </div>  
       </div>
