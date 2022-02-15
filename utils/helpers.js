@@ -5,4 +5,9 @@ module.exports = {
         date
       ).getFullYear()}`;
     },
+
+    progress_bar: (donation_total, goal) => {
+      var percentage = goal / donation_total;
+      return percentage;
+    }
   }
