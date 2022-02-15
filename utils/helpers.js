@@ -11,9 +11,9 @@ module.exports = {
       if (parseInt(donation_total) === 0) {
         percentage = 0;
       } else {
-        percentage = goal / donation_total;
+        percentage = (donation_total / goal) * 100;
       }
 
-      return percentage;
+      return percentage.toFixed(2);
     }
   }
