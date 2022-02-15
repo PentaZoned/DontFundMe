@@ -41,12 +41,16 @@ How to view the project:
 8. Finally, use command "node server.js" to run the project
 
 ## Images
-![alt text](/images/landingpage.PNG)
-![alt text](/images/projects.PNG)
-![alt text](/images/dashboard.PNG)
+![Demonstration gif](/images/demonstration.gif)
+
+A demonstration of a user's point-of-view of using the application
+
+![Landing page of website](/images/landingpage.PNG)
+![All current crowdfunding projects](/images/projects.PNG)
+![User's dashboard](/images/dashboard.PNG)
 
 ## License
-This Project is under the MIT License
+This project is under the MIT License
 
 # Contributors
 ## Jose Pascual
@@ -58,11 +62,12 @@ This Project is under the MIT License
 - [Link to LinkedIn](https://www.linkedin.com/in/bfguo/)
 
 ## Bradley Le
-- [Link to Github](https://www.github.com/plotinusspascual)
-- [Link to LinkedIn](https://www.linkedin.com/in/jose-plotinuss-pascual/)
+- [Link to Github](https://github.com/PentaZoned)
+- [Link to LinkedIn](https://www.linkedin.com/in/bradley-le-/)
+- [Link to Portfolio](https://pentazoned.github.io/portfolio-v2/)
 
 ## Questions
-If you have anyquestions please feel free to email me
+If you have any questions please feel free to email me
 - [plotinusspascual@gmail.com](plotinusspascual@gmail.com)
 
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
