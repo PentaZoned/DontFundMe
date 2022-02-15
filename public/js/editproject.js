@@ -3,10 +3,10 @@ async function editProjectHandler(event) {
     //get the project title and description
     const title = document.querySelector('#project-title').value.trim();
     const description = document.querySelector('#project-desc').value.trim();
-    const project_id = window.location.toString().split("/")[
+    const id = window.location.toString().split("/")[
       window.location.toString().split("/").length - 1
     ];
-    const response = await fetch(`/api/projects/${project_id}`, {
+    const response = await fetch(`/api/projects/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
