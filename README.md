@@ -3,11 +3,17 @@
 # DontFundMe
 
 ## Table of Contents
-- [Description](#project-description)
-- [Installation](#installation)
-- [Images](#images)
+- [DontFundMe](#dontfundme)
+  - [Table of Contents](#table-of-contents)
+  - [Project Description](#project-description)
+  - [Installation](#installation)
+  - [Images](#images)
+  - [License](#license)
 - [Contributors](#contributors)
-- [Contact](#github)
+  - [Jose Pascual](#jose-pascual)
+  - [Baofeng Guo](#baofeng-guo)
+  - [Bradley Le](#bradley-le)
+  - [Questions](#questions)
 
 ## Project Description
 
@@ -48,8 +54,8 @@ This Project is under the MIT License
 - [Link to LinkedIn](https://www.linkedin.com/in/jose-plotinuss-pascual/)
 
 ## Baofeng Guo
-- [Link to Github](https://www.github.com/plotinusspascual)
-- [Link to LinkedIn](https://www.linkedin.com/in/jose-plotinuss-pascual/)
+- [Link to Github](https://github.com/magickw)
+- [Link to LinkedIn](https://www.linkedin.com/in/bfguo/)
 
 ## Bradley Le
 - [Link to Github](https://www.github.com/plotinusspascual)
