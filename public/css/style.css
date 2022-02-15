@@ -145,5 +145,15 @@ padding: 20px;
 }
 
 .progress-bar {
-  margin: 0px 0px 0px 285px;
+  margin: 0 auto;
 }
+
+.progress-bar2 {
+  margin: 0px 0px 0px 270px;
+}
+
+.progress-bar3 {
+  margin: 0 auto;
+}
+
+
