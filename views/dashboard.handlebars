@@ -1,44 +1,44 @@
-<div class="row">
-  <div class="col-auto">
+<div class="columns">
+  <div class="column">
     <h1>Dashboard</h1>
   </div>
 </div>
-<div class="row mt-4">
+<div class="columns">
   {{#if projects.length}}
-  <div class="col-md-6 project-list">
+  <div class="column project-list">
     <h3>Your DontFundMe Projects:</h3>
-      <div class="col">
-        <div class="row" style="flex-wrap: nowrap">
+      <div class="columns">
+        <div class="column" style="flex-wrap: nowrap">
           <h3>Start a new DontFundMe!</h3>
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary create">DontFundMe</button>
+          <div class="column">
+            <button type="click" class="button is-primary create">Create a DontFundMe!</button>
           </div>
         </div>  
       </div>
     {{#each projects as |project|}}
-    <div class="row mb-2 projects">
-      <div class="col-8">
+    <div class="columns projects">
+      <div class="column">
         <h2>
           <a href="/projects/{{project.id}}">{{project.title}}</a>
         </h2>
-      <div class="col-8">
+      <div class="column">
         <p>{{project.description}}</p>
         <p><span>Raised {{donationTotal}} / ${{project.fund_needed}}</span></p>
         <p>Created on {{format_date project.created_at}}</p>        
       </div>
     </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-primary" data-id="{{project.id}}">EDIT</button>
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+      <div class="column">
+        <button class="button is-primary" data-id="{{project.id}}">EDIT</button>
+        <button class="button is-danger" data-id="{{project.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
       {{else}}
-      <div class="col">
-        <div class="row" style="flex-wrap: nowrap">
+      <div class="columns">
+        <div class="columns" style="flex-wrap: nowrap">
           <h3>You don't have a project yet. Start a DontFundMe!</h3>
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary create">DontFundMe</button>
+          <div class="column">
+            <button type="submit" class="button is-primary">DontFundMe</button>
           </div>
         </div>  
       </div>
