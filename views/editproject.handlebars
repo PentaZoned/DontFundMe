@@ -1,0 +1,25 @@
+<section>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Project
+  </h2>
+  <form class="edit-project-form">
+    <div>
+      <input name="project-title" type="text" value="{{project.title}}" />
+    </div>
+    <div>
+      <textarea name="project-desc">{{project.description}}</textarea>
+    </div>
+    <div>
+      Projected on {{format_date project.created_at}}
+    </div>
+    <button type="submit">Save</button>
+    <button type="button" class="delete-project-btn">Delete</button>
+  </form>
+</section>
+
+
+
+<!--Scripts-->
+<script src="/js/editproject.js"></script>
+<script src="/js/deleteproject.js"></script>
