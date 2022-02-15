@@ -129,6 +129,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
+
 // A route to edit the logged in user
 router.get('/edituser', withAuth, (req, res) => {
   // Acess the User model and run the findOne() method to get a single user based on parameters

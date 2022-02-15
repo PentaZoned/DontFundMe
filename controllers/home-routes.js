@@ -62,27 +62,27 @@ router.get('/projects', async (req, res) => {
   }
 });
 
-//   router.get('/project/:id', (req, res) => {
-//     Project.findOne({
-//       where: {
-//         id: req.params.id
-//       },
-//       attributes: [
-//         'id',
-//         'title',
-//         'description',
-//         'user_id',
-//         'fund_needed',
-//         'created_at'
-//       ],
-//       include: [
-//         {
-//           model: Donation,
-//           attributes: ['id', 'amount', 'created_at'],
-//           include: {
+// router.get('/project/:id', (req, res) => {
+//   Project.findOne({
+//     where: {
+//       id: req.params.id
+//     },
+//     attributes: [
+//       'id',
+//       'title',
+//       'description',
+//       'user_id',
+//       'fund_needed',
+//       'created_at'
+//     ],
+//     include: [
+//       {
+//         model: Donation,
+//         attributes: ['id', 'amount', 'created_at'],
+//         include: {
 //             model: User,
 //             attributes: ['name']
-//           }
+//         }
 //         },
 //         {
 //           model: User,
@@ -90,25 +90,59 @@ router.get('/projects', async (req, res) => {
 //         }
 //       ]
 //     })
-//       .then(dbProjectData => {
-//         if (!dbProjectData) {
-//           res.status(404).json({ message: 'No project found with this id' });
-//           return;
-//         }
+//     .then(dbProjectData => {
+//       if (!dbProjectData) {
+//         res.status(404).json({ message: 'No project found with this id' });
+//         return;
+//       }
 
-//         // serialize the data
-//         const post = dbProjectData.get({ plain: true });
+  router.get('/project/:id', (req, res) => {
+    Project.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        'id',
+        'title',
+        'description',
+        'user_id',
+        'fund_needed',
+        'created_at'
+      ],
+      include: [
+        {
+          model: Donation,
+          attributes: ['id', 'amount', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['name']
+          }
+        },
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ]
+    })
+      .then(dbProjectData => {
+        if (!dbProjectData) {
+          res.status(404).json({ message: 'No project found with this id' });
+          return;
+        }
 
-//         // pass data to template
-//         res.render('single-project', {
-//             post,
-//             loggedIn: req.session.loggedIn
-//           });
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-// });
+        // serialize the data
+        const post = dbProjectData.get({ plain: true });
+
+        // pass data to template
+        res.render('project', {
+            post,
+            loggedIn: req.session.loggedIn
+          });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
 
 module.exports = router
