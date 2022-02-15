@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
@@ -17,12 +19,6 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
-
 .display-flex{
   display: flex !important;
   flex-direction: row-reverse;
@@ -37,12 +33,44 @@ line-height:51px;
 vertical-align:middle;
 }
 
+a{
+  color: #557580;
+}
+
+a:link, a:visited {
+  text-decoration: none; 
+}
+a:hover, a:active {
+  text-decoration: none;
+}
+
+.button.is-primary{
+background-color: #557580;
+}
+
+.button.is-primary:hover, .button.is-light:hover{
+  color: white;
+  background-color: #9C876F;
+}
+
+
 h1, h2, h3{
   text-align: center;
 }
 
 h1{
+  font-size: 60px;
+  font-weight: bolder;
   color: #9C876F;
+}
+
+h2{
+  font-size: 35px;
+}
+
+h3{
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .circle{
@@ -58,10 +86,8 @@ h1{
   font: 25px Arial, sans-serif;
 }
 
-.row{
-  display: flex;
-  justify-content: center; /*centers items on the line (the x-axis by default)*/
-  align-items: center; /*centers items on the cross-axis (y by default)*/
+.column{
+  text-align: center;
 }
 
 .link{
@@ -97,4 +123,8 @@ padding: 20px;
 
 .project-btn{
   padding: 20px;
+}
+
+.landingpage{
+  margin: auto;
 }

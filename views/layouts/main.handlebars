@@ -10,16 +10,30 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-right p-2">
-      <nav>
-        {{#if logged_in}}
-        <a href="/dashboard">Dashboard</a> |
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/signin">Get Started</a>
-        {{/if}}
-      </nav>
+    <header>
+      <div class="navbar" arial-label="main navigation">
+        <div class="navbar-start">
+          <div class="navbar-item">
+            <a class="button is-primary" href="/">
+              <strong>DontFundMe</strong>
+            </a>            
+          </div>
+        </div>
+        <div class="navbar-end">
+          <nav class="navbar-item">
+            {{#if logged_in}}
+            <div class="buttons">
+              <a class="button is-primary" href="/dashboard">
+                <strong>Dashboard</strong>
+              </a>
+              <a class="button is-light" id="logout">Logout</a>
+            </div>
+            {{else}}
+            <a class="button is-primary" href="/signin"><strong>Get Started</strong></a>
+            {{/if}}
+          </nav>        
+        </div>
+      </div>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
@@ -28,7 +42,6 @@
     <footer>
       
     </footer>
-  </div>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
