@@ -48,6 +48,10 @@ a:hover, a:active {
 background-color: #557580;
 }
 
+.button.is-light{
+  border-color: #9C876F;
+}
+
 .button.is-primary:hover, .button.is-light:hover{
   color: white;
   background-color: #9C876F;
