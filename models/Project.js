@@ -37,6 +37,13 @@ Project.init(
                 isDecimal: true,
             }
         },
+        donation_total: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            validate: {
+                isDecimal: true,
+            }
+        },
         created_at: {
           type: DataTypes.STRING,
           validate: {

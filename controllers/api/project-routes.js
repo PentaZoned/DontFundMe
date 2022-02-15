@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
             'description',
             'user_id',
             'fund_needed',
+            'donation_total',
             'created_at'
         ],
         //sorting by time created in a descending order
@@ -50,6 +51,7 @@ router.get('/', (req, res) => {
         'description',
         'user_id',
         'fund_needed',
+        'donation_total',
         'created_at'
       ],
       include: [
@@ -89,7 +91,7 @@ router.post('/', withAuth, (req, res) => {
       description: req.body.description,
       user_id: req.session.user_id,
       fund_needed: req.body.fund_needed,
-
+      donation_total: 0,
     })
       .then(dbProjectData => res.json(dbProjectData))
       .catch(err => {
