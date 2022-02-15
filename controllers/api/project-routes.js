@@ -98,6 +98,7 @@ router.post('/', withAuth, (req, res) => {
       });
 });
 
+
 //PUT updates a project
 router.put('/:id', withAuth, (req, res) => {
     Project.update({

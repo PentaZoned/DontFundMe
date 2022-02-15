@@ -3,7 +3,7 @@ async function donationFormHandler(event) {
     event.preventDefault();
 
     // Get the project title and project text from the form
-
+    
     const amount = document.querySelector('#donation-amount').value.trim();
 
  
@@ -34,8 +34,10 @@ async function donationFormHandler(event) {
 
 //Get an array of donation amounts
 function getAmountArr(){
+    var projectId = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1];
     var amountArr = [];
-    var query = `SELECT * FROM donation`;
+    var query = `SELECT * FROM donation WHERE project_id=${projectId}`;
     db.query(query,  (err, res) => {
       if (err) throw err
       for (var i = 0; i < res.length; i++) {
